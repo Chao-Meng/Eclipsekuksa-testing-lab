@@ -1,0 +1,9 @@
+[submodule "third_party/kuksa-databroker"]
+	path = third_party/kuksa-databroker
+	url = https://github.com/eclipse-kuksa/kuksa-databroker
+[submodule "third_party/kuksa-mock-provider"]
+	path = third_party/kuksa-mock-provider
+	url = https://github.com/eclipse-kuksa/kuksa-mock-provider
+[submodule "third_party/kuksa-python-sdk"]
+	path = third_party/kuksa-python-sdk
+	url = https://github.com/eclipse-kuksa/kuksa-python-sdk
