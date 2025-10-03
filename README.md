@@ -8,6 +8,15 @@ A testing environment for Eclipse Kuksa Databroker with mock vehicle data provid
 - Python 3.8+
 - pip (Python package installer)
 
+## For Windows
+
+Add this code under COPY ./ in Dockerfile (third_party/kuksa-mock-provider/Dockerfile) 
+
+RUN apt-get update && apt-get install -y dos2unix \
+    && find . -type f \( -name "*.py" -o -name "*.sh" \) -exec dos2unix {} \;
+
+    
+
 ## Getting Started
 
 ### 1. Start Databroker and Mock Provider
