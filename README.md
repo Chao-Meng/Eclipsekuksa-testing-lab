@@ -12,8 +12,9 @@ A testing environment for Eclipse Kuksa Databroker with mock vehicle data provid
 
 Add this code under COPY ./ in Dockerfile (third_party/kuksa-mock-provider/Dockerfile) 
 
-RUN apt-get update && apt-get install -y dos2unix \
+```RUN apt-get update && apt-get install -y dos2unix \
     && find . -type f \( -name "*.py" -o -name "*.sh" \) -exec dos2unix {} \;
+```
 
     
 
