@@ -16,4 +16,7 @@ class SpeedMonitor:
         self.th = th
 
     def on_speed(self,value:float) -> List[Alert]:
+       alerts: List[Alert] = []
+       if value > self.th.max_speed:
+            alerts.append(Alert("SPEEDING", value, f"Speed {value:.2f} exceeds max {self.th.max_speed:.2f}"))
        return []
