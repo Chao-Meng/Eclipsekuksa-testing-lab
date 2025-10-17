@@ -21,6 +21,7 @@ def main():
     def on_update(resp):
         speed = resp["Vehicle.Speed"].value
         for a in mon.on_speed(speed):
+            sink.write(a.kind, a.speed, a.reason)
             print(f"[ALERT] kind={a.kind} speed={a.speed:.2f} reason={a.reason}", flush=True)
     
     c.subscribe_current_values(["Vehicle.Speed"], on_update)
