@@ -8,7 +8,7 @@ class AlertSink:
         self._f = open(csv_path, "a", newline="")
         self._w = csv.writer(self._f)
         if new:
-            self.w.writerow(["ts", "kind", "value", "reason"])
+            self._w.writerow(["ts", "kind", "value", "reason"])
 
     def write(self, kind: str, value:float, reason:str):
         ts = datetime.now(timezone.utc).isoformat()
@@ -22,4 +22,4 @@ class AlertSink:
             os.fsync(self._.filemo())
         finally:
             self._f.close()
-            
+

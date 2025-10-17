@@ -12,11 +12,11 @@ class Alert:
     reason:str
 
 class SpeedMonitor:
-    def __init__(self, the:Thresholds):
+    def __init__(self, th:Thresholds):
         self.th = th
 
     def on_speed(self,value:float) -> List[Alert]:
        alerts: List[Alert] = []
        if value > self.th.max_speed:
-            alerts.append(Alert("SPEEDING", value, f"Speed {value:.2f} exceeds max {self.th.max_speed:.2f}"))
-       return []
+            alerts.append(Alert("overspeed", value, f"Speed {value:.2f} exceeds max {self.th.max_speed:.2f}"))
+       return alerts
