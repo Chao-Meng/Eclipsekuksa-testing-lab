@@ -20,7 +20,8 @@ def main():
 
     def on_update(resp):
         speed = resp["Vehicle.Speed"].value
-        _ = mon.on_speed(speed)
+        for a in mon.on_speed(speed):
+            print(f"[ALERT] kind={a.kind} speed={a.speed:.2f} reason={a.reason}", flush=True)
     
     c.subscribe_current_values(["Vehicle.Speed"], on_update)
     print("Subscribed. Ctrl+C to exit.")
